@@ -45,6 +45,7 @@ Please go to the folder [agent_transformer](./agent_transformer) for specific do
 <p align="center">
     <img src="figures/fig_high_reso.png" width= "300">
 </p>
+
 ### Downstream tasks
 
 Please go to the folder [detection](./downstream/detection), [segmentation](./downstream/segmentation) for specific documents.
