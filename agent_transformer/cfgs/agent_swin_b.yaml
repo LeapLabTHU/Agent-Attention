@@ -1,0 +1,14 @@
+DATA:
+  BATCH_SIZE: 64
+MODEL:
+  TYPE: agent_swin
+  NAME: agent_swin_base
+  DROP_PATH_RATE: 0.5
+  SWIN:
+    EMBED_DIM: 128
+    DEPTHS: [ 2, 2, 18, 2 ]
+    NUM_HEADS: [ 4, 8, 16, 32 ]
+    WINDOW_SIZE: 56
+  AGENT:
+    ATTN_TYPE: AAMB2
+    NUM: 9-16-49-49

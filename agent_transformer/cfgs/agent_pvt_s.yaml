@@ -1,0 +1,21 @@
+DATA:
+  IMG_SIZE: 224
+  BATCH_SIZE: 128
+
+TRAIN:
+  WEIGHT_DECAY: 0.05
+  EPOCHS: 300
+  WARMUP_EPOCHS: 5
+  COOLDOWN_EPOCHS: 10
+  BASE_LR: 5e-4
+  WARMUP_LR: 1e-6
+  MIN_LR: 1e-5
+  CLIP_GRAD: None
+
+MODEL:
+  TYPE: agent_pvt_small
+  NAME: agent_pvt_small
+  DROP_PATH_RATE: 0.1
+  AGENT:
+    ATTN_TYPE: AAAA
+    NUM: 9-16-49-49

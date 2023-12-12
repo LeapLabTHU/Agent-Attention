@@ -1,0 +1,8 @@
+DATA:
+  IMG_SIZE: 448
+  BATCH_SIZE: 64
+MODEL:
+  TYPE: agent_deit_small
+  NAME: agent_deit_small_448
+  AGENT:
+    NUM: 49-49-49-49

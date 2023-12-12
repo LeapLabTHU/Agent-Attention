@@ -1,0 +1,8 @@
+DATA:
+  BATCH_SIZE: 512
+MODEL:
+  TYPE: agent_deit_tiny
+  NAME: agent_deit_tiny
+  DROP_PATH_RATE: 0.0
+  AGENT:
+    NUM: 49-49-49-49

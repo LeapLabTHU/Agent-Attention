@@ -1,0 +1,6 @@
+MODEL:
+  TYPE: agent_deit_base
+  NAME: agent_deit_base
+  DROP_PATH_RATE: 0.3
+  AGENT:
+    NUM: 81-81-81-81

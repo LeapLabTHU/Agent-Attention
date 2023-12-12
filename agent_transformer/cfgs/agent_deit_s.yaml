@@ -1,0 +1,6 @@
+MODEL:
+  TYPE: agent_deit_small
+  NAME: agent_deit_small
+  DROP_PATH_RATE: 0.1
+  AGENT:
+    NUM: 49-49-49-49
