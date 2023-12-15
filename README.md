@@ -2,7 +2,7 @@
 
 This repo contains the official PyTorch code and pre-trained models for **Agent Attention**.
 
-+ [Agent Attention: On the Integration of Softmax and Linear Attention (to be updated)](https://arxiv.org/)
++ [Agent Attention: On the Integration of Softmax and Linear Attention](https://arxiv.org/abs/2312.08874)
 
 ## Introduction
 
@@ -88,7 +88,12 @@ Our code is developed on the top of [PVT](https://github.com/whai362/PVT), [Swin
 If you find this repo helpful, please consider citing us.
 
 ```latex
-(To be updated)
+@article{han2023agent,
+  title={Agent Attention: On the Integration of Softmax and Linear Attention},
+  author={Han, Dongchen and Ye, Tianzhu and Han, Yizeng and Xia, Zhuofan and Song, Shiji and Huang, Gao},
+  journal={arXiv preprint arXiv:2312.08874},
+  year={2023}
+}
 ```
 
 ## Contact

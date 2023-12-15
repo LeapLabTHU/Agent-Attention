@@ -74,5 +74,10 @@ elif i == 20:
 If you find this repo helpful, please consider citing us.
 
 ```latex
-(To be updated)
+@article{han2023agent,
+  title={Agent Attention: On the Integration of Softmax and Linear Attention},
+  author={Han, Dongchen and Ye, Tianzhu and Han, Yizeng and Xia, Zhuofan and Song, Shiji and Huang, Gao},
+  journal={arXiv preprint arXiv:2312.08874},
+  year={2023}
+}
 ```
