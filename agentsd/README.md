@@ -34,12 +34,12 @@ Place the [agentsd](./) folder in your project and apply AgentSD to any Stable D
 ```py
 import agentsd
 if step == 0:
-	# Apply Agent Attention and ToMe during early 20 diffusion steps
+    # Apply Agent Attention and ToMe during early 20 diffusion steps
     agentsd.apply_patch(model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95)
 elif step == 20:
-	# Apply ToMe in later diffusion steps
-	agentsd.remove_patch(model)
-	agentsd.apply_patch(model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5)
+    # Apply ToMe in later diffusion steps
+    agentsd.remove_patch(model)
+    agentsd.apply_patch(model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5)
 ```
 ### Example
 To apply AgentSD to SDv1 PLMS sampler, add the following to [this line](https://github.com/runwayml/stable-diffusion/blob/08ab4d326c96854026c4eb3454cd3b02109ee982/ldm/models/diffusion/plms.py#L143):
@@ -48,8 +48,8 @@ import agentsd
 if i == 0:
     agentsd.apply_patch(self.model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95)
 elif i == 20:
-	agentsd.remove_patch(self.model)
-	agentsd.apply_patch(self.model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5)
+    agentsd.remove_patch(self.model)
+    agentsd.apply_patch(self.model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5)
 ```
 To apply AgentSD to SDv2 DDIM sampler, add the following to [this line](https://github.com/Stability-AI/stablediffusion/blob/cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf/ldm/models/diffusion/ddim.py#L152) (setting ``attn_precision="fp32"`` to avoid [numerical instabilities on the v2.1 model](https://github.com/Stability-AI/stablediffusion/tree/main?tab=readme-ov-file#news)):
 
@@ -58,8 +58,8 @@ import agentsd
 if i == 0:
     agentsd.apply_patch(self.model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95, attn_precision="fp32")
 elif i == 20:
-	agentsd.remove_patch(self.model)
-	agentsd.apply_patch(self.model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5, attn_precision="fp32")
+    agentsd.remove_patch(self.model)
+    agentsd.apply_patch(self.model, sx=2, sy=2, ratio=0.4, agent_ratio=0.5, attn_precision="fp32")
 ```
 
 ## TODO
