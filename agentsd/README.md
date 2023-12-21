@@ -35,6 +35,7 @@ Place the [agentsd](./) folder in your project and apply AgentSD to any Stable D
 import agentsd
 if step == 0:
     # Apply Agent Attention and ToMe during early 20 diffusion steps
+    agentsd.remove_patch(self.model)
     agentsd.apply_patch(model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95)
 elif step == 20:
     # Apply ToMe in later diffusion steps
@@ -46,6 +47,7 @@ To apply AgentSD to SDv1 PLMS sampler, add the following to [this line](https://
 ```py
 import agentsd
 if i == 0:
+    agentsd.remove_patch(self.model)
     agentsd.apply_patch(self.model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95)
 elif i == 20:
     agentsd.remove_patch(self.model)
@@ -56,6 +58,7 @@ To apply AgentSD to SDv2 DDIM sampler, add the following to [this line](https://
 ```py
 import agentsd
 if i == 0:
+    agentsd.remove_patch(self.model)
     agentsd.apply_patch(self.model, sx=4, sy=4, ratio=0.4, agent_ratio=0.95, attn_precision="fp32")
 elif i == 20:
     agentsd.remove_patch(self.model)
