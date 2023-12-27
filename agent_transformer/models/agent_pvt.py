@@ -142,8 +142,8 @@ class AgentAttention(nn.Module):
 
         agent_tokens = self.pool(q.reshape(b, H, W, c).permute(0, 3, 1, 2)).reshape(b, c, -1).permute(0, 2, 1)
         q = q.reshape(b, n, num_heads, head_dim).permute(0, 2, 1, 3)
-        k = k.reshape(b, n, num_heads, head_dim).permute(0, 2, 1, 3)
-        v = v.reshape(b, n, num_heads, head_dim).permute(0, 2, 1, 3)
+        k = k.reshape(b, n // self.sr_ratio ** 2, num_heads, head_dim).permute(0, 2, 1, 3)
+        v = v.reshape(b, n // self.sr_ratio ** 2, num_heads, head_dim).permute(0, 2, 1, 3)
         agent_tokens = agent_tokens.reshape(b, self.agent_num, num_heads, head_dim).permute(0, 2, 1, 3)
 
         kv_size = (self.window_size[0] // self.sr_ratio, self.window_size[1] // self.sr_ratio)
@@ -164,7 +164,9 @@ class AgentAttention(nn.Module):
         x = q_attn @ agent_v
 
         x = x.transpose(1, 2).reshape(b, n, c)
-        v = v.transpose(1, 2).reshape(b, H, W, c).permute(0, 3, 1, 2)
+        v = v.transpose(1, 2).reshape(b, H // self.sr_ratio, W // self.sr_ratio, c).permute(0, 3, 1, 2)
+        if self.sr_ratio > 1:
+            v = nn.functional.interpolate(v, size=(H, W), mode='bilinear')
         x = x + self.dwc(v).permute(0, 2, 3, 1).reshape(b, n, c)
 
         x = self.proj(x)
