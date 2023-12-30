@@ -27,7 +27,7 @@ def bipartite_soft_matching_random2d(metric: torch.Tensor,
                                      generator: torch.Generator = None) -> Tuple[Callable, Callable]:
     """
     Partitions the tokens into src and dst and merges r tokens from src to dst.
-    Dst tokens are partitioned by choosing one randomy in each (sx, sy) region.
+    Dst tokens are partitioned by choosing one randomly in each (sx, sy) region.
 
     Args:
      - metric [B, N, C]: metric to use for similarity
