@@ -47,7 +47,9 @@ Please place ImageNet-1K pretrained models under `./data/` folder and rename the
 
 ### Installation
 
-For convenience, we provide the conda environment file.
+For convenience, we provide the conda environment file and pre-bulit `mmcv`.
+Please download the pre-built mmcv [here](https://cloud.tsinghua.edu.cn/d/b9bb25fcdc49430c9d87/), and place it under `../` 
+We use an empty `mmcv` directory as a placeholder.
 ```
 conda env create -f agent_detection.yaml
 cd ../mmcv/
