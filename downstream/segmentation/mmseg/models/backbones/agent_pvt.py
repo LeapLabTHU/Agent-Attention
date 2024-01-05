@@ -126,8 +126,6 @@ class AgentAttention(nn.Module):
         self.pool = nn.AdaptiveAvgPool2d(output_size=downstream_agent_shape)
         self.softmax = nn.Softmax(dim=-1)
 
-        print('Agent Attention sr{} v{} n{} k{} scale{} reso{}'.format(sr_ratio, agent_num, kernel_size, scale, window_size))
-
     def forward(self, x, H, W):
         b, n, c = x.shape
         num_heads = self.num_heads

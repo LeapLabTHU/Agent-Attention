@@ -123,8 +123,6 @@ class AgentAttention(nn.Module):
         self.downstream_agent_shape = downstream_agent_shape
         self.pool = nn.AdaptiveAvgPool2d(output_size=downstream_agent_shape)
 
-        print('Agent Attention window{} v{} n{} k{} scale{} reso{}'.format(window_size, agent_num, kernel_size, scale, input_resolution))
-
     def forward(self, x, mask=None, hw_shape=None):
         """
         Args:
