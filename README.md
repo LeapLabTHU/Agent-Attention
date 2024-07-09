@@ -9,9 +9,15 @@ This repo contains the official PyTorch code and pre-trained models for **Agent 
 <p align="center">
     <img src="figures/fig_3type_attn.png" width= "400">
 </p>
-
-
 The attention module is the key component in Transformers. While the global attention mechanism offers robust expressiveness, its excessive computational cost constrains its applicability in various scenarios. In this paper, we propose a novel attention paradigm, **Agent Attention**, to strike a favorable balance between computational efficiency and representation power. Specifically, the Agent Attention, denoted as a quadruple $(Q, A, K, V)$, introduces an additional set of agent tokens $A$ into the conventional attention module.  The agent tokens first act as the agent for the query tokens $Q$ to aggregate information from $K$ and $V$, and then broadcast the information back to $Q$. Given the number of agent tokens can be designed to be much smaller than the number of query tokens, the agent attention is significantly more efficient than the widely adopted Softmax attention, while preserving global context modelling capability. Interestingly, we show that the proposed agent attention is equivalent to a generalized form of linear attention. Therefore, agent attention seamlessly integrates the powerful Softmax attention and the highly efficient linear attention.
+
+
+## Motivation
+
+<p align="center">
+    <img src="figures/fig_motivation.jpg" width= "500">
+</p>
+(a) In Softmax attention, each query aggregates information from all features, incurring quadratic complexity. (b) Leveraging the redundancy between attention weights, agent attention uses a small number of agent tokens to act as the "agent'' for queries, capturing diverse semantic information from all features, and then presenting it to each query.
 
 
 ## Method
