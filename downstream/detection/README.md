@@ -84,11 +84,11 @@ torchrun --nproc_per_node <GPU_NUM> tools/train.py <CONFIG_FILE> --launcher="pyt
 If you find this repo helpful, please consider citing us.
 
 ```latex
-@article{han2023agent,
-  title={Agent Attention: On the Integration of Softmax and Linear Attention},
-  author={Han, Dongchen and Ye, Tianzhu and Han, Yizeng and Xia, Zhuofan and Song, Shiji and Huang, Gao},
-  journal={arXiv preprint arXiv:2312.08874},
-  year={2023}
+@inproceedings{han2024agent,
+  title={Agent attention: On the integration of softmax and linear attention},
+  author={Han, Dongchen and Ye, Tianzhu and Han, Yizeng and Xia, Zhuofan and Pan, Siyuan and Wan, Pengfei and Song, Shiji and Huang, Gao},
+  booktitle={European Conference on Computer Vision},
+  year={2024},
 }
 ```
 
